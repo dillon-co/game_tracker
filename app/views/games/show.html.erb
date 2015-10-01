@@ -2,7 +2,8 @@
 <% if @game.in_stock? %>
   <h2><%= "This game is in stock" %></h2>
   <%= form_for @game do |f| %>  
-    <h3><%= f.label "This has been borrowed by" %></h3>
+    <h3>Not in stock?</h3>
+    <h4><%= f.label "This has been borrowed by" %></h4>
     <%= f.text_field :borrower %>
     <%= f.submit "Update" %>
   <% end %>  
