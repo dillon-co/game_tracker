@@ -1,0 +1,11 @@
+<h1><%= @game.title %></h1>
+<% if @game.in_stock? %>
+  <h2><%= "This game is in stock" %></h2>
+  <%= form_for @game do |f| %>  
+    <h3><%= f.label "This has been borrowed by" %></h3>
+    <%= f.text_field :borrower %>
+    <%= f.submit "Update" %>
+  <% end %>  
+<% else %>
+  <h2><%= "This game is being borrowed by #{@game.borrower}" %>
+<% end %>    
