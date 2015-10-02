@@ -1,5 +1,5 @@
 <% @games.each do |game| %>
   <h2><%= game.title %></h2>
-  <%= link_to "View Game", game_path(game.id), class: "btn btn-primary" %>
+  <%= link_to "View Game", game_path(game), class: "btn btn-primary" %>
   <hr>
 <% end %>

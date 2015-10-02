@@ -16,4 +16,13 @@ class Game < ActiveRecord::Base
     end
   end  
 
+  def bounty_message
+    messages = ['has given in willingly.',
+                'was incredibly stubborn so we broke their legs and took the game.',
+                "offered their firstborn son to keep this. we told 'em no.",
+                'tried running with this, luckily we brought our tazers',
+                "was having a date night that we interupted, but that's okay I don't think they were meant for eachother anyway", 
+                "fed us cookies so we wouldn't beat 'em up... we did anyways, but only a little :)"]
+    messages.sample
+  end  
 end

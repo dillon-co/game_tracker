@@ -3,6 +3,11 @@ class GamesController < ApplicationController
     @games = Game.all
   end
 
+  def bounty
+    @game = Game.find(params[:id])
+    @message = @game.bounty_message
+  end  
+
   def return
     @game = Game.find(params[:id])
     @game.return_game
