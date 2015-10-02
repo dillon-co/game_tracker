@@ -12,6 +12,14 @@ class GamesController < ApplicationController
   def loaned_games
     @games = Game.all.select {|game| game.borrower.length > 0}
   end
+
+  def available_games
+    @games = Game.all.select {|game| game.borrower.length == 0 }
+  end  
+
+  def edit
+    @game = Game.find(params[:id])
+  end  
     
   def update
     @game = Game.find(params[:id])
@@ -39,8 +47,14 @@ class GamesController < ApplicationController
     end  
   end  
 
+  def destroy
+    @game = Game.find(params[:id])
+    @game.destroy 
+    redirect_to root_path
+  end  
+
   private
   def game_params
-    params.require(:game).permit(:id, :title, :borrower)
+    params.require(:game).permit(:id, :title, :borrower, :date_borrowed)
   end  
 end

@@ -5,9 +5,13 @@
     <h3>Not in stock?</h3>
     <h4><%= f.label "This has been borrowed by" %></h4>
     <%= f.text_field :borrower %>
+    <h4><%= f.label "On" %></h4>
+    <%= f.date_field :date_borrowed %>
     <%= f.submit "Update" %>
   <% end %>  
 <% else %>
-  <h2><%= "This game is being borrowed by #{@game.borrower}" %><br>
+  <h2><%= "This game has been borrowed by #{@game.borrower} on #{@game.pretty_date}" %><br>
     <%= link_to 'Return Game', return_game_path(@game), class: 'btn btn-primary', method: :post %>
-<% end %>    
+<% end %> 
+<br><hr><%= link_to 'Edit Game', edit_game_path(@game), class: 'btn btn-warning' %> 
+<%= link_to 'Delete Game', @game, method: :delete, class: 'btn btn-danger' %>  
