@@ -3,6 +3,16 @@ class GamesController < ApplicationController
     @games = Game.all
   end
 
+  def return
+    @game = Game.find(params[:id])
+    @game.return_game
+    redirect_to root_path
+  end  
+
+  def loaned_games
+    @games = Game.all.select {|game| game.borrower.length > 0}
+  end
+    
   def update
     @game = Game.find(params[:id])
     if @game.update(game_params)

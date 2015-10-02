@@ -1,6 +1,6 @@
 <% @games.each do |game| %>
 <h2><%= game.title %></h2>
-<h3><%= game.in_stock? ? "This game is in stock" : "This game is being borrowed by #{game.borrower}" %></h3>
+<h3><%= game.in_stock? ? "This game is in stock" : "Borrowed by #{game.borrower} on #{game.updated_at.strftime('%B %-d, %Y')}" %></h3>
 <%= link_to "View Game", game_path(game.id), class: "btn btn-primary" %>
 <hr>
 <% end %>

@@ -8,5 +8,6 @@
     <%= f.submit "Update" %>
   <% end %>  
 <% else %>
-  <h2><%= "This game is being borrowed by #{@game.borrower}" %>
+  <h2><%= "This game is being borrowed by #{@game.borrower}" %><br>
+    <%= link_to 'Return Game', return_game_path(@game), class: 'btn btn-primary', method: :post %>
 <% end %>    

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :games
+  get 'loaned_games' => 'games#loaned_games'
+
+  post 'return_game/:id' => 'games#return', as: 'return_game' 
   root to: 'games#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
