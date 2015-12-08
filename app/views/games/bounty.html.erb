@@ -1,5 +1,5 @@
-<h1> You hired a group of bounty hunters to get your game back.</h1>
-<h3>When they return the leader says:</h3>  
-<h2>"<%= "#{@game.borrower} #{@message}" %>"</h2>
+<h1> You hire the Mafia.</h1>
+<h3>When they return the leader says:</h3><hr>  
+<h2>"<%= "#{@game.borrower} #{@message}" %>"</h2><hr>
 
-<%= link_to 'Retrieve Game From Bounty Hunter', return_game_path(@game), class: 'btn btn-success', method: :post %>
+<%= link_to 'Retrieve Game From Mafia', return_game_path(@game), class: 'btn btn-success', method: :post %>

@@ -12,7 +12,7 @@
 <% else %>
   <h2><%= "This game has been borrowed by #{@game.borrower} on #{@game.pretty_date}" %><br>
     <%= link_to 'Return Game', return_game_path(@game), class: 'btn btn-success', method: :post %>
-    <%= link_to 'Call A Bounty Hunter', bounty_path(@game), class: 'btn btn-danger' %>
+    <%= link_to 'Call Mafia', bounty_path(@game), class: 'btn btn-danger' %>
 <% end %> 
 <br><hr><%= link_to 'Edit Game', edit_game_path(@game), class: 'btn btn-warning' %> 
 <%= link_to 'Delete Game', @game, method: :delete, class: 'btn btn-danger' %>  
